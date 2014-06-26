@@ -325,9 +325,10 @@
 		        }).first().css('z-index'))+10;
 		  var textbox = this.component ? this.component : this.element;
 		  var offset = textbox.offset();
+		  var bodyOffset = $('body').offset();
 		  var height = textbox.outerHeight() + parseInt(textbox.css('margin-top'));
 		  this.picker.css({
-		    top: offset.top + height,
+		    top: offset.top + height - bodyOffset.top,
 		    left: offset.left,
 		    zIndex: zIndex
 		  });
